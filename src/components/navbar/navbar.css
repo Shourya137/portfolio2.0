@@ -1,0 +1,34 @@
+.navbar.JHL_navbar {
+  background-color: transparent;
+  position: absolute;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  z-index: 10; }
+  .navbar.JHL_navbar .navbar-item {
+    color: #1c1c1c; }
+
+@media screen and (min-width: 1024px) {
+  .JHL_navbar.fixed {
+    position: fixed; } }
+
+@media screen and (max-width: 1024px) {
+  .JHL_navbar button.button.navbar-burger {
+    background-color: transparent;
+    border: none; }
+  .JHL_navbar .navbar-menu {
+    position: absolute;
+    display: block;
+    width: 100vw;
+    transform: translateX(100vw);
+    transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+    transition-delay: .5s; }
+    .JHL_navbar .navbar-menu .navbar-end {
+      opacity: 0;
+      transform: translateY(15px);
+      transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s, transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s; }
+  .JHL_navbar .navbar-menu.is-active {
+    transform: translateX(0); }
+    .JHL_navbar .navbar-menu.is-active .navbar-end {
+      transform: translateY(0px);
+      opacity: 1; } }
