@@ -17,16 +17,16 @@
     background-color: transparent;
     border: none; }
   .JHL_navbar .navbar-menu {
-    position: absolute;
+    position: relative;
     display: block;
     width: 100vw;
     transform: translateX(100vw);
     transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-    transition-delay: .5s; }
+    overflow: hidden; }
     .JHL_navbar .navbar-menu .navbar-end {
       opacity: 0;
       transform: translateY(15px);
-      transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s, transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s; }
+      transition: opacity 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s; }
   .JHL_navbar .navbar-menu.is-active {
     transform: translateX(0); }
     .JHL_navbar .navbar-menu.is-active .navbar-end {

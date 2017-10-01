@@ -23,7 +23,7 @@ const Hero = (props) => {
   );
 
   return (
-    <div className={HeroClass}>
+    <div className={HeroClass} id={props.id} style={{overflow: 'hidden'}}>
       {props.children}
     </div>
   );
@@ -49,11 +49,13 @@ Hero.propTypes = {
     'light',
     'white',
   ]),
+  id: PropTypes.string,
 };
 Hero.defaultProps = {
   isBold: false,
   color: null,
   size: null,
+  id: null,
 };
 
 export default Hero;

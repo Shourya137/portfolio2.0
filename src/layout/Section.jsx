@@ -5,11 +5,11 @@ import Scroll from 'react-scroll';
 import Hero from '../components/hero/Hero';
 import HeroBody from '../components/hero/HeroBody';
 
-const Section = ({ children, name, color, isBold, size }) => {
+const Section = ({ children, name, color, isBold, size, id }) => {
   const Element = Scroll.Element;
   return (
     <Element name={name}>
-      <Hero size={size} isBold={isBold} color={color}>
+      <Hero id={id} size={size} isBold={isBold} color={color}>
         <HeroBody align="center">
           {children}
         </HeroBody>
@@ -39,11 +39,13 @@ Section.propTypes = {
     'light',
     'white',
   ]),
+  id: PropTypes.string,
 };
 Section.defaultProps = {
   isBold: false,
   color: null,
   size: null,
+  id: null,
 };
 
 export default Section;

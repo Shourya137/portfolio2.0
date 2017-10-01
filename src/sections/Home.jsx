@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '../layout/Section';
 
 const Home = () => (
-  <Section name="home" size="fullHeight" color="light">
+  <Section name="home" size="fullHeight" color="light" id="home">
     <h1>Home</h1>
   </Section>
 );

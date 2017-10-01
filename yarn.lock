@@ -1024,6 +1024,10 @@ bcrypt-pbkdf@^1.0.0:
   dependencies:
     tweetnacl "^0.14.3"
 
+bezier-easing@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/bezier-easing/-/bezier-easing-2.0.3.tgz#cb493fddb7f8920ecca00973344ce0518885f17e"
+
 big.js@^3.1.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/big.js/-/big.js-3.2.0.tgz#a5fc298b81b9e0dca2e458824784b65c52ba588e"
@@ -5410,6 +5414,13 @@ react-error-overlay@^2.0.2:
     react-dom "^15 || ^16"
     settle-promise "1.0.0"
     source-map "0.5.6"
+
+react-plx@^0.1.20:
+  version "0.1.20"
+  resolved "https://registry.yarnpkg.com/react-plx/-/react-plx-0.1.20.tgz#1088a0eaf751c350f5ae51086f3dc7908c897858"
+  dependencies:
+    bezier-easing "^2.0.3"
+    prop-types "^15.5.8"
 
 react-scripts@1.0.14:
   version "1.0.14"

@@ -4,7 +4,7 @@ import 'bulma/css/bulma.css';
 
 import Navbar from '../components/navbar/Navbar';
 import logo from './logo.svg';
-import './layout.sass';
+import './layout.css';
 
 const Layout = ({ children }) => {
   const Brand = {

@@ -24,17 +24,17 @@ $cubic-bezier: cubic-bezier(0.785, 0.135, 0.15, 0.86)
       border: none
 
     .navbar-menu
-      position: absolute
+      position: relative
       display: block
       width: 100vw
       transform: translateX(100vw)
       transition: transform .5s $cubic-bezier
-      transition-delay: .5s
+      overflow: hidden
 
       .navbar-end
         opacity: 0
         transform: translateY(15px)
-        transition: opacity .5s $cubic-bezier 1s, transform .5s $cubic-bezier 1s
+        transition: opacity .5s $cubic-bezier .5s, transform .5s $cubic-bezier .5s
 
     .navbar-menu.is-active
       transform: translateX(0)
