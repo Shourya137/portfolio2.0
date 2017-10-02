@@ -2,17 +2,44 @@ import React from 'react';
 
 import Section from '../../layout/Section';
 import Profile from './Profile';
-import Name from './Name';
 import Description from './Description';
-import './About.css';
+import ContactIcon from './ContactIcon';
 
+const contactIconMovingUnit = 250;
 
 const About = () => (
-  <Section name="about" size="fullHeight" color="light" id="about">
+  <Section name="about" size="small" id="about">
     <Profile />
-    <div className="section">
-      <Name />
-      <Description />
+    <Description />
+    <div className="content is-large">
+      <ContactIcon
+        href="https://linkedin.com/in/linuk"
+        iconClass="linkedin"
+        movingUnit={contactIconMovingUnit}
+        index={2}
+        direction="left"
+      />
+      <ContactIcon
+        href="https://github.com/linuk"
+        iconClass="github-alt"
+        movingUnit={contactIconMovingUnit}
+        index={1}
+        direction="left"
+      />
+      <ContactIcon
+        href="mailto:hello.linuk@gmail.com"
+        iconClass="envelope"
+        movingUnit={contactIconMovingUnit}
+        index={1}
+        direction="right"
+      />
+      <ContactIcon
+        href=""
+        iconClass="phone"
+        movingUnit={contactIconMovingUnit}
+        index={2}
+        direction="right"
+      />
     </div>
   </Section>
 );

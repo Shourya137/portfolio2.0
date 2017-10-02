@@ -14,7 +14,8 @@ export default () => (
         duration: 'height',
         name: 'first',
         properties: [
-          { startValue: 300, endValue: 0, unit: 'px', property: 'translateY' },
+          { startValue: 100, endValue: 0, unit: 'px', property: 'translateY' },
+          { startValue: 0, endValue: 1, property: 'opacity' },
         ],
       },
       {

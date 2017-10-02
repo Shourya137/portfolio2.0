@@ -5,4 +5,12 @@ $circleDiameter: 200px
   height: $circleDiameter
   border-radius: 50%
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+  animation: floatingY 3s infinite ease-in-out
 
+@keyframes floatingY
+  from
+    transform: translateY(-15px)
+  65%
+    transform: translateY(0px)
+  to
+    transform: translateY(-15px)
