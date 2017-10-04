@@ -1,0 +1,82 @@
+$navbar-background-color: #fff
+
+.navbar
+  background-color: transparent
+  position: absolute
+  width: 100vw
+  top: 0
+  left: 0
+  z-index: 11
+
+  .navbar-brand, .navbar-menu, .navbar-burger
+    z-index: 10
+  .navbar-item
+    color: #1c1c1c
+
+.is-overlay
+  // Move overlay to outside of screen to prevent overlaying items
+  // set transform to delay 0.5s to translate after opacity set to 0
+  transition: opacity .5s ease-in-out, transform 0s ease-in 0.5s
+  transform: translateX(100vw)
+  height: 100vh
+  width: 100vw
+  background-color: rgba(0,0,0, .7)
+  opacity: 0
+  // Set to -1 to display properly
+  z-index: -1
+  &.is-active
+    // Move overlay to the position and display it
+    transition: opacity .5s ease-in-out, transform 0s ease-in 0s
+    opacity: 1
+    display: block
+    transform: translateX(0)
+
+// Tablet, Desktop
+@media screen and (min-width: $break-to-touch)
+  .navbar
+    background-color: $navbar-background-color
+    .scroll-down
+      box-shadow: $box-shadow-2
+  .is-overlay
+    background-color: #00b89c
+
+  &.fixed
+    position: fixed
+
+  .navbar-brand
+    opacity: 0
+    animation: fade-in-left .5s $cubic-bezier .8s forwards
+
+  .navbar-menu
+    opacity: 0
+    animation: fade-in-right .5s $cubic-bezier 1s forwards
+
+// Mobile device
+@media screen and (max-width: $break-to-touch)
+  .navbar
+    button.button.navbar-burger
+      background-color: transparent
+      border: none
+      color: inherit
+      &.is-active
+        color: #fff
+
+    .navbar-menu
+      background-color: $navbar-background-color
+      position: relative
+      display: block
+      width: 100vw
+      transform: translateX(100vw)
+      transition: transform .5s $cubic-bezier
+      overflow: hidden
+
+      .navbar-end
+        opacity: 0
+        transform: translateY(15px)
+        transition: opacity .5s $cubic-bezier .5s, transform .5s $cubic-bezier .5s
+
+    .navbar-menu.is-active
+      transform: translateX(0)
+      .navbar-end
+        transform: translateY(0px)
+        opacity: 1

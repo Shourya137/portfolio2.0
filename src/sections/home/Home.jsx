@@ -1,28 +1,34 @@
 import React from 'react';
 import Plx from 'react-plx';
-
+import Fa from 'react-fontawesome';
 import Section from '../../layout/Section';
+import Scroll from 'react-scroll';
 
-import './Home.css';
-
-const Home = () => (
-  <Section name="home" size="fullHeight" id="home">
-    <div className="container has-text-centered">
+const Home = () => {
+  const { Link } = Scroll;
+  const StartArrowTo = 'about';
+  const StartArrow = (
+    <Link
+      spy
+      to={StartArrowTo}
+      smooth="easeOutQuart"
+      duration={1000}
+      activeClass="isActive"
+    >
+      <Fa name="angle-down" size="5x" className="start-arrow" />
+    </Link>
+  );
+  return (
+    <Section name="home" size="fullHeight" id="home">
       <Plx
+        className="columns is-multiline"
         animateWhenNotInViewport
         parallaxData={[
           {
             start: '#home',
             duration: 300,
             name: 'second',
-            easing: [0.785, 0.135, 0.15, 0.86],
             properties: [
-              {
-                startValue: 0,
-                endValue: -200,
-                unit: 'px',
-                property: 'translateY',
-              },
               {
                 startValue: 1,
                 endValue: 0,
@@ -32,13 +38,16 @@ const Home = () => (
           },
         ]}
       >
-        <div className="home-CTA">
-          <h1 className="title home-CTA-title">Jheng-Hao Lin</h1>
+        <div className="home column is-half-desktop is-half-tablet ">
+          <h1 className="title home-title">Jheng-Hao Lin</h1>
+        </div>
+        <div className="column is-centered is-12">
+          {StartArrow}
         </div>
       </Plx>
-    </div>
-  </Section>
-);
+    </Section>
+  );
+};
 
 Home.propTypes = {};
 Home.defaultProps = {};

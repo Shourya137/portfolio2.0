@@ -1,0 +1,52 @@
+.home
+  transition: color .5s $cubic-bezier
+  height: 400px
+  width: 400px
+  max-height: 400px
+  max-width: 400px
+  display: flex
+  flex-direction: column
+  justify-content: center
+  position: relative
+  margin-left: auto
+  margin-right: auto
+  border-radius: 50%
+  z-index: 2
+  animation: floatUp .8s $easeInOutBack .7s forwards
+
+  &:after,
+  &:before
+    content: ''
+    position: absolute
+    width: 100%
+    height: 100%
+    border-radius: 50%
+    top: 0
+    left: 0
+
+  &:after
+    background-color: #000
+    animation: scale-down-big 1s $cubic-bezier forwards
+
+  .title
+    transform: scale(0)
+    animation: scale-up .5s $cubic-bezier 1.2s forwards
+
+  @media screen and (max-width: $break-md)
+    height: 224px
+    width: 224px
+    h1.title
+      font-size: 1.5rem
+
+
+.start-arrow
+  +CBTransition(color, .5s)
+  animation: floating 3s infinite $cubic-bezier, fade-in-up .5s $cubic-bezier 2s forwards
+  cursor: pointer
+  color: $grey-light
+  opacity: 0
+
+  &:hover
+    color: lighten($grey-light, 15%)
+
+

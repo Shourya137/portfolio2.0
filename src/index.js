@@ -5,8 +5,9 @@ import registerServiceWorker from './registerServiceWorker';
 import Home from './sections/home/Home';
 import About from './sections/about/About';
 import Skills from './sections/Skills';
-import Projects from './sections/projects/Projects.jsx';
+import Projects from './sections/projects/Projects';
 import Layout from './layout/Layout';
+import './styles/index.css';
 
 class App extends React.Component {
   render() {

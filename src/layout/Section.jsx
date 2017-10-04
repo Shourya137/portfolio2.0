@@ -5,12 +5,14 @@ import Scroll from 'react-scroll';
 import Hero from '../components/hero/Hero';
 import HeroBody from '../components/hero/HeroBody';
 
-const Section = ({ children, name, color, isBold, size, id }) => {
+const Section = ({ children, name, color, isBold, size, id, title }) => {
   const Element = Scroll.Element;
+  const Title = title ? (<h1 className="title">{title}</h1>) : null;
   return (
     <Element name={name}>
       <Hero id={id} size={size} isBold={isBold} color={color}>
         <HeroBody align="center">
+          {Title}
           {children}
         </HeroBody>
       </Hero>
@@ -19,6 +21,7 @@ const Section = ({ children, name, color, isBold, size, id }) => {
 };
 
 Section.propTypes = {
+  title: PropTypes.string,
   name: PropTypes.string.isRequired,
   isBold: PropTypes.bool,
   size: PropTypes.oneOf([
@@ -42,6 +45,7 @@ Section.propTypes = {
   id: PropTypes.string,
 };
 Section.defaultProps = {
+  title: '',
   isBold: false,
   color: null,
   size: null,

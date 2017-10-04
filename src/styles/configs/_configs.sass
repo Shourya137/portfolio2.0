@@ -1,0 +1,36 @@
+$break-md: 768px
+// Break point to touch device set default by Bulma.io
+$break-to-touch: 1008px
+$border-radius: 25px
+$cubic-bezier: cubic-bezier(0.785, 0.135, 0.15, 0.86)
+$easeInOutBack: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+$background-color: #fff
+$grey-light: #999
+$box-shadow-1: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24)
+$box-shadow-2: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23)
+$box-shadow-3: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22)
+
+=CBTransition($property, $duration, $delayTime: 0s)
+  transition: $property $duration $cubic-bezier $delayTime
+
+=transitions($transition...)
+  transition: $transition
+
+
+=transitionDelayByIndex($nth, $timeUnit, $color: '#0a0')
+  &:nth-child($nth)
+    color: $color
+    transition-delay: $nth*$timeUnit s
+
+=is-overlay()
+  content: ''
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  position: absolute
+  z-index: 10
+
+// About section
+$profile-img-max-height: 200px
+$profile-img-max-width: 200px

@@ -1,9 +1,7 @@
 import React from 'react';
 import Plx from 'react-plx';
 
-
 import Profile from './profile.jpg';
-import './Profile.css';
 
 export default () => (
   <Plx

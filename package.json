@@ -2,7 +2,7 @@
   "name": "portfolio2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://linuk.github.io/portfolio2.0",
+  "homepage": ".",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.8.0",
@@ -16,6 +16,7 @@
   "dependencies": {
     "bulma": "^0.5.3",
     "classnames": "^2.2.5",
+    "font-awesome": "^4.7.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.1",
     "prop-types": "^15.6.0",

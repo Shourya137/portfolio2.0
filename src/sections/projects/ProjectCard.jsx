@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import './ProjectCard.css';
-
 export default ({ project: {
   name,
   tags,
@@ -27,11 +25,11 @@ export default ({ project: {
   };
 
   const Tags = tags.map(tag => (
-    <span className="tag is-rounded">{tag}</span>
+    <span key={tag} className="tag is-rounded">{tag}</span>
   ));
 
   return (
-    <div className="column is-one-third">
+    <div className="column is-half">
       <div className="card ProjectCard">
         <div className="card-image">
           <figure className="image">

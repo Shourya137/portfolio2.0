@@ -4,8 +4,8 @@ import Scroll from 'react-scroll';
 import cx from 'classnames';
 
 import NavItem from './NavItem';
-import './navbar.css';
 
+// TODO: Add box shadow once scroll off top
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +23,7 @@ class Navbar extends React.Component {
 
   render() {
     const { brand, navbarStart, navbarEnd, activeItem } = this.props;
+    const { isActive } = this.state;
     const { Link } = Scroll;
 
     const NavbarStart = navbarStart ? (
@@ -61,7 +62,7 @@ class Navbar extends React.Component {
       <button
         onClick={this.toggleNavbar}
         className={
-          cx('button', 'navbar-burger', { 'is-active': this.state.isActive })
+          cx('button', 'navbar-burger', { 'is-active': isActive })
         }
       >
         <span /><span /><span />
@@ -81,15 +82,16 @@ class Navbar extends React.Component {
     ) : null;
 
     return (
-      <nav className="navbar JHL_navbar fixed" aria-label="main navigation">
+      <nav className="navbar fixed" aria-label="main navigation">
         <div className="navbar-brand">
           {Brand}
           {HamburgerButton}
         </div>
-        <div className={cx('navbar-menu', { 'is-active': this.state.isActive })}>
+        <div className={cx('navbar-menu', { 'is-active': isActive })}>
           {NavbarStart}
           {NavbarEnd}
         </div>
+        <div className={cx('is-overlay', { 'is-active': isActive })} />
       </nav>
     );
   }
