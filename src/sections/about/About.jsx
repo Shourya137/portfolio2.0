@@ -5,44 +5,42 @@ import Profile from './Profile';
 import Description from './Description';
 import ContactIcon from './ContactIcon';
 
-const contactIconMovingUnit = 250;
+const About = () => {
+  const contactIconMovingUnit = 100;
+  const contacts = [
+    { iconClass: 'linkedin', href: 'https://linkedin.com/in/linuk' },
+    { iconClass: 'github-alt', href: 'https://github.com/linuk' },
+    { iconClass: 'envelope', href: 'mailto:hello.linuk@gmail.com' },
+    { iconClass: 'phone', href: '' },
+  ];
 
-const About = () => (
-  <Section name="about" size="small" id="about">
-    <Profile />
-    <Description />
-    <div className="content is-large">
-      <ContactIcon
-        href="https://linkedin.com/in/linuk"
-        iconClass="linkedin"
-        movingUnit={contactIconMovingUnit}
-        index={2}
-        direction="left"
-      />
-      <ContactIcon
-        href="https://github.com/linuk"
-        iconClass="github-alt"
-        movingUnit={contactIconMovingUnit}
-        index={1}
-        direction="left"
-      />
-      <ContactIcon
-        href="mailto:hello.linuk@gmail.com"
-        iconClass="envelope"
-        movingUnit={contactIconMovingUnit}
-        index={1}
-        direction="right"
-      />
-      <ContactIcon
-        href=""
-        iconClass="phone"
-        movingUnit={contactIconMovingUnit}
-        index={2}
-        direction="right"
-      />
-    </div>
-  </Section>
-);
+  const ContactIcons = contacts.map((contact, index) => (
+    <ContactIcon
+      key={contact.iconClass}
+      href={contact.href}
+      iconClass={contact.iconClass}
+      movingUnit={contactIconMovingUnit}
+      index={index}
+      direction="right"
+    />
+  ));
+
+  return (
+    <Section name="about" size="fullHeight" id="about">
+      <div className="columns">
+        <div className="column is-one-third">
+          <Profile />
+        </div>
+        <div className="column">
+          <div className="content has-text-centered has-text-left-desktop has-text-left-tablet ">
+            <Description />
+            {ContactIcons}
+          </div>
+        </div>
+      </div>
+    </Section>
+  );
+};
 
 About.propTypes = {};
 About.defaultProps = {};

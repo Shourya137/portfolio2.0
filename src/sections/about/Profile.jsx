@@ -13,15 +13,16 @@ export default () => (
         start: '#home',
         duration: 'height',
         name: 'first',
+        easing: [0.785, 0.135, 0.15, 0.86],
         properties: [
-          { startValue: 100, endValue: 0, unit: 'px', property: 'translateY' },
-          { startValue: 0, endValue: 1, property: 'opacity' },
+          { startValue: -100, endValue: 0, unit: 'px', property: 'translateX' },
         ],
       },
       {
         start: '#about',
         duration: 'height',
         name: 'second',
+        easing: [0.785, 0.135, 0.15, 0.86],
         properties: [
           { startValue: 0, endValue: -250, unit: 'px', property: 'translateY' },
         ],

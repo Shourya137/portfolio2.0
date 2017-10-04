@@ -1,14 +1,14 @@
 .profile {
   width: 200px;
   height: 200px;
-  border-radius: 50%;
+  border-radius: 25px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
-  animation: floatingY 3s infinite ease-in-out; }
+  animation: floatingY 5s infinite ease-in-out; }
 
 @keyframes floatingY {
   from {
-    transform: translateY(-15px); }
+    transform: translateY(-10px); }
   65% {
     transform: translateY(0px); }
   to {
-    transform: translateY(-15px); } }
+    transform: translateY(-10px); } }

@@ -1,7 +1,7 @@
 import React from 'react';
-import Section from '../../layout/Section';
 import Plx from 'react-plx';
 
+import Section from '../../layout/Section';
 
 import './Home.css';
 
@@ -13,12 +13,13 @@ const Home = () => (
         parallaxData={[
           {
             start: '#home',
-            duration: 200,
+            duration: 300,
             name: 'second',
+            easing: [0.785, 0.135, 0.15, 0.86],
             properties: [
               {
                 startValue: 0,
-                endValue: -100,
+                endValue: -200,
                 unit: 'px',
                 property: 'translateY',
               },

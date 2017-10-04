@@ -2,7 +2,7 @@ import React from 'react';
 import Section from '../layout/Section';
 
 const Skills = () => (
-  <Section name="skills" size="fullHeight" color="light" id="skills">
+  <Section name="skills" size="fullHeight" id="skills">
     <div className="content is-large">
     <h1>Skills</h1>
     </div>

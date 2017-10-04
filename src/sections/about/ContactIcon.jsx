@@ -3,7 +3,7 @@ import Plx from 'react-plx';
 import PropType from 'prop-types';
 import Fa from 'react-fontawesome';
 
-export default ({ href, iconClass, movingUnit, index, direction }) => {
+export default ({ href, iconClass, movingUnit, index }) => {
   this.propTypes = {
     href: PropType.string.isRequired,
     iconClass: PropType.string.isRequired,
@@ -14,13 +14,9 @@ export default ({ href, iconClass, movingUnit, index, direction }) => {
      *  right is 2, 1, 1, 2
      */
     index: PropType.string.isRequired,
-    // right uses positive sign
-    direction: PropType.oneOf(['left', 'right']).isRequired,
   };
 
-  let sign = 1;
-  if (direction === 'left') sign = -1;
-  const startPos = sign * index * movingUnit;
+  const startPos = index * movingUnit;
   return (
     <a href={href}>
       <Plx
@@ -35,24 +31,6 @@ export default ({ href, iconClass, movingUnit, index, direction }) => {
               {
                 startValue: startPos,
                 endValue: 0,
-                unit: 'px',
-                property: 'translateX',
-              },
-              {
-                startValue: 0,
-                endValue: 1,
-                property: 'opacity',
-              },
-            ],
-          },
-          {
-            start: '#about',
-            duration: 'height',
-            name: 'second',
-            properties: [
-              {
-                startValue: 0,
-                endValue: -100,
                 unit: 'px',
                 property: 'translateY',
               },
