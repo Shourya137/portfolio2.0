@@ -1,5 +1,5 @@
 $numOfContactIcons: 4
-$prevSection: Plx--in-about
+$currentSection: Plx--in-about
 
 #about
 
@@ -32,12 +32,18 @@ $prevSection: Plx--in-about
           .icon
             transition-delay: #{.3 + $i * .05}s
     .icon
-      +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier )
+      +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier)
       transform: translateX(500px)
       opacity: 0
+      span.fa-circle
+        +CBTransition(color, .5s)
+      &:hover
+        span.fa-circle
+          color: $grey-light
 
 
-  .#{$prevSection}
+
+  .#{$currentSection}
     .icon
       transform: translateX(0)
       opacity: 1
@@ -49,7 +55,6 @@ $prevSection: Plx--in-about
           transform: scaleY(0)
 
   .profile
-    width: 100%
     height: auto
 
     // Desktop

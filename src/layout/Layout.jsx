@@ -1,11 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import 'bulma/css/bulma.css';
 
 import Navbar from '../components/navbar/Navbar';
 import logo from './logo.svg';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, isOffTop }) => {
   const Brand = {
     url: logo,
     alt: 'Jheng-Hao Lin',
@@ -21,7 +20,7 @@ const Layout = ({ children }) => {
 
   return (
     <div className="layout">
-      <Navbar brand={Brand} navbarEnd={navItemsEnd} />
+      <Navbar brand={Brand} navbarEnd={navItemsEnd} isOffTop={isOffTop} />
       {children}
     </div>
   );
@@ -29,6 +28,7 @@ const Layout = ({ children }) => {
 
 Layout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node).isRequired,
+  isOffTop: PropTypes.bool.isRequired,
 };
 Layout.defaultProps = {};
 

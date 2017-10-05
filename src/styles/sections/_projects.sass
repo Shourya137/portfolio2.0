@@ -1,0 +1,19 @@
+$currentSection: Plx--in-projects
+
+#projects
+  .column
+    +transitions(transform .5s $cubic-bezier, opacity .5s $cubic-bezier)
+    transform: translateY(15px)
+    opacity: 0
+
+    @media screen and (min-width: $break-to-touch)
+      &:nth-child(even)
+        transform: translateX(60px)
+      &:nth-child(odd)
+        transform: translateX(-60px)
+
+  .Plx--in-projects,
+  .Plx--bellow
+    .column
+      opacity: 1
+      transform: translateY(0)

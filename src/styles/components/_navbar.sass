@@ -12,6 +12,8 @@ $navbar-background-color: #fff
     z-index: 10
   .navbar-item
     color: #1c1c1c
+    &.is-active
+      background-color: #aaaaaa
 
 .is-overlay
   // Move overlay to outside of screen to prevent overlaying items
@@ -35,7 +37,7 @@ $navbar-background-color: #fff
 @media screen and (min-width: $break-to-touch)
   .navbar
     background-color: $navbar-background-color
-    .scroll-down
+    .add-shadow
       box-shadow: $box-shadow-2
   .is-overlay
     background-color: #00b89c

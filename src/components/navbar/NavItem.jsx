@@ -18,6 +18,7 @@ const NavItem = ({ label, handleActive }) => {
   };
 
   const Link = Scroll.Helpers.Scroll(LinkContainer);
+  this.handleActive = () => handleActive(label);
 
   return (
     <Link
@@ -26,7 +27,7 @@ const NavItem = ({ label, handleActive }) => {
       smooth="easeOutQuart"
       duration={1000}
       activeClass="isActive"
-      onSetActive={handleActive}
+      onSetActive={this.handleActive}
     >
       {label}
     </Link>

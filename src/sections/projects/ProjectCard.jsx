@@ -29,17 +29,19 @@ export default ({ project: {
   ));
 
   return (
-    <div className="column is-half">
-      <div className="card ProjectCard">
+    <div className="column is-half-desktop is-half-tablet">
+      <div className="card">
         <div className="card-image">
           <figure className="image">
             <img src={thumbnailURL} alt={name} />
           </figure>
         </div>
         <div className="card-content">
-          <h2 className="is-bold">{name}</h2>
-          <p className="">{shortDescription}</p>
-          {Tags}
+          <h2 className="title">{name}</h2>
+          <p className="content">{shortDescription}</p>
+          <div className="tags">
+            {Tags}
+          </div>
         </div>
       </div>
     </div>

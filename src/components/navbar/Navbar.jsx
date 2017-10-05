@@ -11,6 +11,7 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       isActive: false,
+      activeNavItem: '',
     };
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.handleActive = this.handleActive.bind(this);
@@ -19,10 +20,12 @@ class Navbar extends React.Component {
   toggleNavbar() { this.setState({ isActive: !this.state.isActive }); }
 
   // trigger after any of the nav-item is clicked
-  handleActive() { this.setState({ isActive: false }); }
+  handleActive(label) {
+    this.setState({ isActive: false, activeNavItem: label });
+  }
 
   render() {
-    const { brand, navbarStart, navbarEnd, activeItem } = this.props;
+    const { brand, navbarStart, navbarEnd, activeItem, isOffTop } = this.props;
     const { isActive } = this.state;
     const { Link } = Scroll;
 
@@ -82,7 +85,10 @@ class Navbar extends React.Component {
     ) : null;
 
     return (
-      <nav className="navbar fixed" aria-label="main navigation">
+      <nav
+        className={cx('navbar fixed', { 'add-shadow': isOffTop })}
+        aria-label="main navigation"
+      >
         <div className="navbar-brand">
           {Brand}
           {HamburgerButton}
@@ -122,6 +128,7 @@ Navbar.propTypes = {
     }),
   ),
   activeItem: PropTypes.string,
+  isOffTop: PropTypes.bool.isRequired,
 };
 Navbar.defaultProps = {
   brand: null,

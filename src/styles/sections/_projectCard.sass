@@ -1,17 +1,60 @@
+$numOfTags: 10
 $border-radius: 25px
+$currentSection1: Plx--in-projects
+$currentSection2: Plx--bellow
+$card-background-color: #fff
+
 #projects
   .card
     border-radius: $border-radius
+    background-color: $card-background-color
     box-shadow: $box-shadow-1
     overflow: hidden
-    height: 400px
+    height: 500px
+
+    .title, .image, .content
+      position: relative
+
+    .title:before,
+    .image:before,
+    .content:before
+      +is-overlay()
+      background-color: $card-background-color
+      transform-origin: 100% 100%
+      transform: ScaleY(1)
 
     .image
       height: 300px
-
       img
-        border-top-left-radius: $border-radius
-        border-top-right-radius: $border-radius
+        object-fit: cover
         max-height: none
         height: 100%
-        object-fit: cover
+
+      &:before
+        +CBTransition(transform, .5s, .5s)
+
+    .title:before
+      +CBTransition(transform, .5s, .8s)
+
+    .content:before
+      +CBTransition(transform, .5s, 1s)
+
+    .tags
+      .tag
+        +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier )
+        transform: translateX(30px)
+        opacity: 0
+        @for $i from 1 through $numOfTags
+          &:nth-child(#{$i})
+            transition-delay: #{.5 + $i * 0.05}s
+
+  .Plx--in-projects, .Plx--bellow
+    .card
+      .image:before
+        transform: ScaleY(0)
+      .title:before, .content:before
+        transform: ScaleX(0)
+
+      .tag
+        transform: translateX(0)
+        opacity: 1
