@@ -1,0 +1,82 @@
+$modal-background-color: #fff
+
+.modal
+  // Hide modal first then translate it
+  +transitions(transform 0s .5s, opacity 0.5s )
+  display: flex
+  transform: translateX(100vw)
+  opacity: 0
+
+  img
+    +CBTransition(transform, .5s, .5s)
+    transform: translateY(-100%)
+
+  .title, .text
+    position: relative
+
+  .title:before, .text:before
+    +CBTransition(transform, .8s)
+    +is-overlay()
+
+    transform-origin: 100% 100%
+    background-color: $modal-background-color
+
+  .title:before
+    transition-delay: .5s
+    transform: scaleY(1)
+  .text:before
+    transition-delay: .8s
+    transform: scaleX(1)
+
+  // buttons
+  .field
+    +transitions(transform .8s $cubic-bezier 1.3s, opacity .8s $cubic-bezier 1.3s)
+    transform: translateY(30px)
+    opacity: 0
+
+  .modal-card
+    border-radius: $border-radius
+
+    img
+      max-height: 200px
+      width: 100%
+      object-fit: cover
+
+
+    a.button
+      +CBTransition(color, .5s)
+      background-color: transparent
+      &:before
+        +is-overlay()
+        +CBTransition(transform, .5s)
+        transform: scaleX(0)
+        transform-origin: 0 0
+        background-color: #000
+        z-index: 1
+      &:not(:last-child)
+        margin-right: 10px
+      &:hover
+        color: #fff
+        &:before
+          +is-overlay()
+          transform: scaleX(1)
+      span
+        z-index: 10
+
+  &.is-active
+    // translate modal back and show it
+    +transitions(transform 0s ease-in-out, opacity .5s)
+    transform: translateX(0)
+    opacity: 1
+
+    img
+      transform: translateY(0)
+
+    .title:before
+      transform: scaleY(0)
+    .text:before
+      transform: scaleX(0)
+
+    .field
+      transform: translateY(0)
+      opacity: 1

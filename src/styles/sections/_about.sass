@@ -1,36 +1,52 @@
 $numOfContactIcons: 4
-$currentSection: Plx--in-about
+$max-box-height: 350px
+$currentSection1: Plx--in-about
+$currentSection2: Plx--bellow
 
 #about
 
+  // Style with .box to improve performance, don't know why but it works
+  .box
+    +CBTransition(transform , .5s)
+    transform: scaleX(0)
+    border-radius: $border-radius
+    transform-origin: 0 0
+    max-height: $max-box-height
+
+    // Prevent image make box height larger in desktop
+    @media screen and (max-width: $break-to-touch)
+      max-height: unset
+
+
   .name, .education, .shortProfile, .profile-img-container, .icon
-    +CBTransition(opacity, .5s)
     position: relative
 
   .name:after,
   .education:after,
   .shortProfile:after,
   .profile-img-container:after
-    +transitions(opacity .5s $cubic-bezier, transform .5s $cubic-bezier )
+    +transitions(transform .5s $cubic-bezier)
     +is-overlay()
     transform-origin: 100% 100%
     background-color: #fff
 
+  .profile-img-container:after
+    transition-delay: .5s
   .name:after
-      transition-delay: .3s
+    transition-delay: .6s
 
   .education:after
-      transition-delay: .4s
+    transition-delay: .7s
 
   .shortProfile:after
-      transition-delay: .5s
+    transition-delay: .8s
 
   .icons
     a
       @for $i from 1 through $numOfContactIcons
         &:nth-child(#{$i})
           .icon
-            transition-delay: #{.3 + $i * .05}s
+            transition-delay: #{.8 + $i * .05}s
     .icon
       +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier)
       transform: translateX(500px)
@@ -43,13 +59,18 @@ $currentSection: Plx--in-about
 
 
 
-  .#{$currentSection}
+  .#{$currentSection1}, .#{$currentSection2}
+    &.box
+      transform: scaleX(1)
+
     .icon
       transform: translateX(0)
       opacity: 1
 
     .profile-img-container:after, .name:after, .education:after, .shortProfile:after
         transform: scaleX(0)
+
+    // Mobile device
     @media screen and (max-width: $break-md)
       .profile-img-container:after
           transform: scaleY(0)

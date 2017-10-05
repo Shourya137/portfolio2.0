@@ -1,5 +1,6 @@
 $numOfTags: 10
 $border-radius: 25px
+$project-card-height: 300px
 $currentSection1: Plx--in-projects
 $currentSection2: Plx--bellow
 $card-background-color: #fff
@@ -9,52 +10,108 @@ $card-background-color: #fff
     border-radius: $border-radius
     background-color: $card-background-color
     box-shadow: $box-shadow-1
+    height: $project-card-height
     overflow: hidden
-    height: 500px
+    position: relative
 
-    .title, .image, .content
-      position: relative
+    img
+      object-fit: cover
+      min-height: 100%
+      min-width: 100%
 
-    .title:before,
-    .image:before,
-    .content:before
-      +is-overlay()
-      background-color: $card-background-color
-      transform-origin: 100% 100%
-      transform: ScaleY(1)
+    .front-title
+      +transitions(opacity .0s .25s)
+      position: absolute
+      bottom: 0
+      right: 0
+      padding: 10px
+      width: 100%
+      background-color: rgba(#000, .5)
+      color: #fff
 
-    .image
-      height: 300px
-      img
-        object-fit: cover
-        max-height: none
-        height: 100%
+    .is-overlay
+      opacity: 0
 
-      &:before
-        +CBTransition(transform, .5s, .5s)
-
-    .title:before
-      +CBTransition(transform, .5s, .8s)
-
-    .content:before
-      +CBTransition(transform, .5s, 1s)
-
-    .tags
       .tag
-        +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier )
-        transform: translateX(30px)
+        border: 1px #fff solid
+        background-color: transparent
+        color: #fff
+
+      .button
+        +transitions(background-color .5s ease-in-out, color 0s ease-in-out 1.3s, border-color 0s ease-in-out 1.3s)
+        align-self: center
+        width: 100px
+        min-height: 2.25rem
+        color: rgba(#fff, 0)
+        // Prevent clicked when the card is not flipped to back
+        transform: rotateY(90deg)
+        &.is-fixBottom
+          position: absolute
+          bottom: 0
+          width: 100%
+          border: none
+          border-top: 2px solid transparent
+
+        &:before
+          content: ''
+          border-radius: $border-radius
+          +is-overlay()
+          +transitions(transform .7s $cubic-bezier 1s)
+          transform: translateX(-100%)
+          background-color: #fff
+
+
+      .title, .content, .tags
+        +transitions(transform .5s $cubic-bezier, opacity .5s $cubic-bezier)
+        transform: translateY(30px)
         opacity: 0
-        @for $i from 1 through $numOfTags
-          &:nth-child(#{$i})
-            transition-delay: #{.5 + $i * 0.05}s
 
-  .Plx--in-projects, .Plx--bellow
+      .title
+        transition-delay: .5s
+      .content
+        transition-delay: .6s
+        flex-grow: 2
+      .tags
+        transition-delay: .7s
+      .title, .content
+        color: #fff
+
+  .#{$currentSection1}, .#{$currentSection2}
     .card
-      .image:before
-        transform: ScaleY(0)
-      .title:before, .content:before
-        transform: ScaleX(0)
+      +transitions(transform .5s linear, box-shadow .5s )
+      cursor: pointer
 
-      .tag
-        transform: translateX(0)
-        opacity: 1
+      &:hover, &.isFlipped
+        box-shadow: $box-shadow-3
+
+      &.isFlipped
+        transform: rotateY(180deg)
+        cursor: default
+        .front-title
+          opacity: 0
+        .is-overlay
+          opacity: 1
+
+          .title, .content, .tags
+            transform: translateY(0)
+            opacity: 1
+
+          .button
+            transform: rotateY(0)
+            color: rgba(#fff, 1)
+            border-color: rgba(#fff, 1)
+            &:hover, &:active, &:focus
+              background-color: rgba(#fff, .3)
+            &:before
+              transform: translateX(100%)
+
+      .is-overlay
+        display: flex
+        flex-direction: column
+        transition-delay: 0.25s
+        transform: rotateY(180deg)
+        background-color: rgba(0,0,0, .7)
+
+
+
+

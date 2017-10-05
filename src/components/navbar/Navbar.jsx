@@ -11,11 +11,42 @@ class Navbar extends React.Component {
     super(props);
     this.state = {
       isActive: false,
+      isOffTop: false,
       activeNavItem: '',
     };
     this.toggleNavbar = this.toggleNavbar.bind(this);
     this.handleActive = this.handleActive.bind(this);
+    this.handleScroll = this.handleScroll.bind(this);
   }
+
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  shouldComponentUpdate(nextProps, nextState) {
+    const isActiveChange = nextState.isActive !== this.state.isActive;
+    const isOffTopChange = nextState.isOffTop !== this.state.isOffTop;
+    const isActiveNavItemChange = nextState.activeNavItem !== this.state.activeNavItem;
+    return isActiveChange || isOffTopChange || isActiveNavItemChange;
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  componentDidUpdate() {
+    console.log('CDU');
+  }
+
+  handleScroll(event) {
+    const scrollPosition = event.target.scrollingElement.scrollTop;
+    // Add shadow after scroll certain pixel from top
+    const addShadowPosition = 0;
+    let isOffTop = false;
+    if (scrollPosition > addShadowPosition) isOffTop = true;
+    this.setState({ isOffTop });
+  }
+
 
   toggleNavbar() { this.setState({ isActive: !this.state.isActive }); }
 
@@ -25,8 +56,8 @@ class Navbar extends React.Component {
   }
 
   render() {
-    const { brand, navbarStart, navbarEnd, activeItem, isOffTop } = this.props;
-    const { isActive } = this.state;
+    const { brand, navbarStart, navbarEnd, activeItem } = this.props;
+    const { isActive, isOffTop } = this.state;
     const { Link } = Scroll;
 
     const NavbarStart = navbarStart ? (
@@ -128,7 +159,6 @@ Navbar.propTypes = {
     }),
   ),
   activeItem: PropTypes.string,
-  isOffTop: PropTypes.bool.isRequired,
 };
 Navbar.defaultProps = {
   brand: null,

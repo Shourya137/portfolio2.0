@@ -13,26 +13,9 @@ import './styles/index.css';
 
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      isOffTop: false,
-    };
-    this.offTop = this.offTop.bind(this);
-    this.onTop = this.onTop.bind(this);
-  }
-
-  onTop() {
-    this.setState({ offTop: false });
-  }
-
-  offTop() {
-    this.setState({ offTop: true });
-  }
-
   render() {
     return (
-      <Layout isOffTop={this.state.isOffTop}>
+      <Layout>
         <Home />
         {/* <div style={{ width: '100vw', height: '2px', backgroundColor: '#333' }} /> */}
         <About />

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Navbar from '../components/navbar/Navbar';
 import logo from './logo.svg';
 
-const Layout = ({ children, isOffTop }) => {
+const Layout = ({ children }) => {
   const Brand = {
     url: logo,
     alt: 'Jheng-Hao Lin',
@@ -20,7 +20,7 @@ const Layout = ({ children, isOffTop }) => {
 
   return (
     <div className="layout">
-      <Navbar brand={Brand} navbarEnd={navItemsEnd} isOffTop={isOffTop} />
+      <Navbar brand={Brand} navbarEnd={navItemsEnd} />
       {children}
     </div>
   );
@@ -28,7 +28,6 @@ const Layout = ({ children, isOffTop }) => {
 
 Layout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node).isRequired,
-  isOffTop: PropTypes.bool.isRequired,
 };
 Layout.defaultProps = {};
 

@@ -1,4 +1,8 @@
 $navbar-background-color: #fff
+$navItem-text-color: #1c1c1c
+$navbar-burger-color: $navItem-text-color
+$navItem-active-color: #aaa
+$border-color: lightgray
 
 .navbar
   background-color: transparent
@@ -8,39 +12,44 @@ $navbar-background-color: #fff
   left: 0
   z-index: 11
 
+  .navbar-brand
+    transition: box-shadow .5s ease-in-out
+
   .navbar-brand, .navbar-menu, .navbar-burger
     z-index: 10
   .navbar-item
-    color: #1c1c1c
+    color: $navItem-text-color
     &.is-active
-      background-color: #aaaaaa
+      background-color: $navItem-active-color
 
-.is-overlay
-  // Move overlay to outside of screen to prevent overlaying items
-  // set transform to delay 0.5s to translate after opacity set to 0
-  transition: opacity .5s ease-in-out, transform 0s ease-in 0.5s
-  transform: translateX(100vw)
-  height: 100vh
-  width: 100vw
-  background-color: rgba(0,0,0, .7)
-  opacity: 0
-  // Set to -1 to display properly
-  z-index: -1
-  &.is-active
-    // Move overlay to the position and display it
-    transition: opacity .5s ease-in-out, transform 0s ease-in 0s
-    opacity: 1
-    display: block
-    transform: translateX(0)
+  .is-overlay
+    // Move overlay to outside of screen to prevent overlaying items
+    // set transform to delay 0.5s to translate after opacity set to 0
+    transition: opacity .5s ease-in-out, transform 0s ease-in 0.5s
+    transform: translateX(100vw)
+    height: 100vh
+    width: 100vw
+    background-color: rgba(0,0,0, .7)
+    opacity: 0
+    // Set to -1 to display properly
+    z-index: -1
+    &.is-active
+      // Move overlay to the position and display it
+      transition: opacity .5s ease-in-out, transform 0s ease-in 0s
+      opacity: 1
+      display: block
+      transform: translateX(0)
 
 // Tablet, Desktop
 @media screen and (min-width: $break-to-touch)
   .navbar
-    background-color: $navbar-background-color
-    .add-shadow
-      box-shadow: $box-shadow-2
-  .is-overlay
-    background-color: #00b89c
+    border-bottom: 2px solid
+    border-color: transparent
+    transition: border-color .5s
+    &.add-shadow
+      //box-shadow: $box-shadow-2
+      border-color: $border-color
+      background-color: $navbar-background-color
 
   &.fixed
     position: fixed
@@ -56,12 +65,23 @@ $navbar-background-color: #fff
 // Mobile device
 @media screen and (max-width: $break-to-touch)
   .navbar
+    .navbar-brand
+      border-bottom: 2px solid
+      border-color: transparent
+      transition: border-color .5s
+    &.fixed
+      position: fixed
+    &.add-shadow
+      .navbar-brand
+        //box-shadow: $box-shadow-2
+        border-color: $border-color
+        background: $navbar-background-color
+
+
     button.button.navbar-burger
       background-color: transparent
       border: none
-      color: inherit
-      &.is-active
-        color: #fff
+      color: $navbar-burger-color
 
     .navbar-menu
       background-color: $navbar-background-color

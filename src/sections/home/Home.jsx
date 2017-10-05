@@ -2,7 +2,7 @@ import React from 'react';
 import Plx from 'react-plx';
 
 import Section from '../../layout/Section';
-import StartArrow from '../UI/StartArrow';
+import StartArrow from '../components/StartArrow';
 
 const Home = () => (
   <Section name="home" size="fullHeight" id="home">
@@ -13,14 +13,8 @@ const Home = () => (
         {
           start: '#home',
           duration: 300,
-          name: 'second',
-          properties: [
-            {
-              startValue: 1,
-              endValue: 0,
-              property: 'opacity',
-            },
-          ],
+          name: 'home',
+          properties: [],
         },
       ]}
     >

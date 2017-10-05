@@ -22,10 +22,9 @@ const NavItem = ({ label, handleActive }) => {
 
   return (
     <Link
-      spy
       to={label}
-      smooth="easeOutQuart"
-      duration={1000}
+      smooth
+      duration={500}
       activeClass="isActive"
       onSetActive={this.handleActive}
     >
