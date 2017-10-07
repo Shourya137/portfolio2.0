@@ -1,8 +1,8 @@
 import React from 'react';
 import Plx from 'react-plx';
 
-import Section from '../../layout/Section';
-import StartArrow from '../components/StartArrow';
+import StartArrow from 'components/StartArrow/StartArrow';
+import Section from 'layout/Section';
 
 const Home = () => (
   <Section name="home" size="fullHeight" id="home">

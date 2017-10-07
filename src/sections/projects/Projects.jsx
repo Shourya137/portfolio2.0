@@ -1,11 +1,9 @@
 import React from 'react';
 import Plx from 'react-plx';
+import Modal from 'components/modal/Modal';
+import Section from 'layout/Section';
 
-import Section from '../../layout/Section';
 import ProjectCard from './ProjectCard';
-import projectsJSON from './projectsContent.json';
-import Modal from '../../components/modal/Modal';
-
 
 class Projects extends React.Component {
   constructor(props) {
@@ -47,6 +45,7 @@ class Projects extends React.Component {
 
   render() {
     const { modal } = this.state;
+    const { title, subtitle, projects } = this.props.data;
     const theModal = (
       <Modal
         isActive={modal.isActive}
@@ -58,7 +57,7 @@ class Projects extends React.Component {
       />
     );
 
-    const ProjectCards = projectsJSON.map(project => (
+    const ProjectCards = projects.map(project => (
       <ProjectCard
         key={project.name}
         project={project}
@@ -68,11 +67,11 @@ class Projects extends React.Component {
 
     return (
       <Section
-        name="projects"
+        name={title}
         size="fullHeight"
-        id="projects"
-        title="Projects"
-        subtitle="Independent projects, University projects and exercises from books."
+        id={title}
+        title={title}
+        subtitle={subtitle}
       >
         <Plx
           className="columns is-multiline"

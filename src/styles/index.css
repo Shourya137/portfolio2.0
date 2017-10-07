@@ -1,3 +1,9 @@
+/**
+ *  Class
+ **/
+/**
+ *  Keyframes
+ **/
 @keyframes floatUp {
   0% {
     box-shadow: 0 0 0 rgba(10, 10, 10, 0), 0 0 0 rgba(10, 10, 10, 0), 0 0 0 rgba(10, 10, 10, 0);
@@ -69,6 +75,15 @@
   background-color: transparent; }
   .hero-head.JHL_hero-head .nav .navbar-item, .hero-head.JHL_hero-head .nav .nav-item {
     color: #a00; }
+
+.start-arrow {
+  transition: color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+  cursor: pointer;
+  color: #999;
+  opacity: 0;
+  animation: fade-in-up 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.7s forwards; }
+  .start-arrow:hover {
+    color: #bfbfbf; }
 
 .navbar {
   background-color: transparent;
@@ -199,7 +214,7 @@
         transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
         transform: scaleX(0);
         transform-origin: 0 0;
-        background-color: #000;
+        background-color: #999;
         z-index: 1; }
       .modal .modal-card a.button:not(:last-child) {
         margin-right: 10px; }
@@ -366,14 +381,14 @@ body {
       .home h1.title {
         font-size: 1.5rem; } }
 
-.start-arrow {
-  transition: color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
-  animation: floating 3s infinite cubic-bezier(0.785, 0.135, 0.15, 0.86), fade-in-up 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 2s forwards;
-  cursor: pointer;
-  color: #999;
-  opacity: 0; }
-  .start-arrow:hover {
-    color: #bfbfbf; }
+.skill-icons-container {
+  display: flex;
+  flex-wrap: wrap; }
+
+.skill-icon-container {
+  padding: 5px; }
+  .skill-icon-container .skill-icon {
+    font-size: 5rem; }
 
 #projects .card {
   border-radius: 25px;
@@ -415,8 +430,7 @@ body {
         border: none;
         border-top: 2px solid transparent; }
       #projects .card .is-overlay .button:before {
-        content: '';
-        border-radius: 25px;
+        transition: transform 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s;
         content: '';
         top: 0;
         left: 0;
@@ -424,7 +438,8 @@ body {
         height: 100%;
         position: absolute;
         z-index: 10;
-        transition: transform 0.7s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s;
+        content: '';
+        border-radius: 25px;
         transform: translateX(-100%);
         background-color: #fff; }
     #projects .card .is-overlay .title, #projects .card .is-overlay .content, #projects .card .is-overlay .tags {
@@ -457,9 +472,9 @@ body {
         transform: translateY(0);
         opacity: 1; }
       #projects .Plx--in-projects .card.isFlipped .is-overlay .button, #projects .Plx--bellow .card.isFlipped .is-overlay .button {
+        border-color: white;
         transform: rotateY(0);
-        color: white;
-        border-color: white; }
+        color: white; }
         #projects .Plx--in-projects .card.isFlipped .is-overlay .button:hover, #projects .Plx--in-projects .card.isFlipped .is-overlay .button:active, #projects .Plx--in-projects .card.isFlipped .is-overlay .button:focus, #projects .Plx--bellow .card.isFlipped .is-overlay .button:hover, #projects .Plx--bellow .card.isFlipped .is-overlay .button:active, #projects .Plx--bellow .card.isFlipped .is-overlay .button:focus {
           background-color: rgba(255, 255, 255, 0.3); }
         #projects .Plx--in-projects .card.isFlipped .is-overlay .button:before, #projects .Plx--bellow .card.isFlipped .is-overlay .button:before {

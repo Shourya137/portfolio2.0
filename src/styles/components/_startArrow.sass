@@ -1,0 +1,9 @@
+.start-arrow
+  +CBTransition(color, .5s)
+  cursor: pointer
+  color: $grey-light
+  opacity: 0
+  animation: fade-in-up .5s $cubic-bezier 1.7s forwards
+
+  &:hover
+    color: lighten($grey-light, 15%)

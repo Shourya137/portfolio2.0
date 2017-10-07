@@ -1,19 +1,22 @@
 import React from 'react';
 import Plx from 'react-plx';
 
-import Section from '../../layout/Section';
+import StartArrow from 'components/StartArrow/StartArrow';
+import Section from 'layout/Section';
 import Profile from './profile.jpg';
 import ContactIcon from './ContactIcon';
-import StartArrow from '../components/StartArrow';
 
-const About = () => {
-  const contacts = [
-    { iconClass: 'linkedin', href: 'https://linkedin.com/in/linuk', isOpenNewPage: true },
-    { iconClass: 'github-alt', href: 'https://github.com/linuk', isOpenNewPage: true },
-    { iconClass: 'envelope', href: 'mailto:hello.linuk@gmail.com', isOpenNewPage: false },
-    { iconClass: 'phone', href: 'tel:+447784599601', isOpenNewPage: false },
-  ];
-
+const About = (props) => {
+  const {
+    title = '',
+    subtitle = '',
+    content: {
+      name = '',
+      education = '',
+      shortProfile = '',
+      contacts = [],
+    },
+  } = props.data;
   const ContactIcons = contacts.map(contact => (
     <ContactIcon
       key={contact.iconClass}
@@ -24,7 +27,7 @@ const About = () => {
   ));
 
   return (
-    <Section name="about" size="fullHeight" id="about" title="About">
+    <Section name={title} size="fullHeight" id={title} title={title} subtitle={subtitle}>
       <Plx
         className="columns box is-paddingless is-clipped is-multiline"
         animateWhenNotInViewport
@@ -38,10 +41,9 @@ const About = () => {
           <img src={Profile} className="profile" alt="Jheng-Hao Lin" />
         </div>
         <div className="column section content has-text-centered has-text-left-desktop has-text-left-tablet ">
-          <h1 className="name">Jheng-Hao Lin</h1>
-          <p className="education">Bachelor of Landscape Design, National Taiwan University <br />
-              Studying BSc Computer Science in Goldsmiths, University of London</p>
-          <p className="shortProfile">I am an undergraduate student studying computer science at Goldsmiths, University of London. With web development experience gained via internships, I changed my career path to programming because of my passion and enthusiasm for web development, now seeking opportunities within an IT Company that offers part-time jobs or internships.</p>
+          <h1 className="name">{name}</h1>
+          <p className="education">{education}</p>
+          <p className="shortProfile">{shortProfile}</p>
           <div className="icons">
             {ContactIcons}
           </div>

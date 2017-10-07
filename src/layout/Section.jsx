@@ -2,15 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Scroll from 'react-scroll';
 
-import Hero from '../components/hero/Hero';
-import HeroBody from '../components/hero/HeroBody';
+import Hero from 'components/hero/Hero';
+import HeroBody from 'components/hero/HeroBody';
 
 const Section = ({ children, name, color, isBold, size, id, title, subtitle }) => {
   const Element = Scroll.Element;
   const Title = title ? (
     <div className="section content is-small">
-      <h1 className="title">{title}</h1>
-      {subtitle ? <h2 className="">{subtitle}</h2> : null}
+      <h1 className="title is-uppercase">{title}</h1>
+      {subtitle ? <h2 className="is-capitalized">{subtitle}</h2> : null}
     </div>
   ) : null;
   return (

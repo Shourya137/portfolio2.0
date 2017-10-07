@@ -39,14 +39,3 @@
       font-size: 1.5rem
 
 
-.start-arrow
-  +CBTransition(color, .5s)
-  animation: floating 3s infinite $cubic-bezier, fade-in-up .5s $cubic-bezier 2s forwards
-  cursor: pointer
-  color: $grey-light
-  opacity: 0
-
-  &:hover
-    color: lighten($grey-light, 15%)
-
-

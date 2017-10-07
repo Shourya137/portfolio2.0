@@ -1,0 +1,33 @@
+{
+  "title": "about",
+  "subtitle": "",
+  "content":
+  {
+    "name": "Jheng-Hao Lin",
+    "education": "Bachelor of Landscape Design, National Taiwan University <br />Studying BSc Computer Science in Goldsmiths, University of London",
+    "shortProfile": "I am an undergraduate student studying computer science at Goldsmiths, University of London. With web development experience gained via internships, I changed my career path to programming because of my passion and enthusiasm for web development, now seeking opportunities within an IT Company that offers part-time jobs or internships.",
+    "contacts":
+    [
+      {
+        "iconClass": "linkedin",
+        "href": "https://linkedin.com/in/linuk",
+        "isOpenNewPage": true
+      },
+      {
+        "iconClass": "github-alt",
+        "href": "https://github.com/linuk",
+        "isOpenNewPage": true
+      },
+      {
+        "iconClass": "envelope",
+        "href": "mailto:hello.linuk@gmail.com",
+        "isOpenNewPage": false
+      },
+      {
+        "iconClass": "phone",
+        "href": "tel:+447784599601",
+        "isOpenNewPage": false
+      }
+    ]
+  }
+}

@@ -111,7 +111,9 @@ class Navbar extends React.Component {
         className="navbar-item"
         href={brand.href}
       >
-        <img src={brand.url} alt={brand.alt} width="112" height="28" />
+        {brand.url ?
+          (<img src={brand.url} alt={brand.alt} width="112" height="28" />) :
+          (brand.alt) }
       </Link>
     ) : null;
 

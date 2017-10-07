@@ -53,10 +53,10 @@ $card-background-color: #fff
           border-top: 2px solid transparent
 
         &:before
+          +transitions(transform .7s $cubic-bezier 1s)
+          +is-overlay()
           content: ''
           border-radius: $border-radius
-          +is-overlay()
-          +transitions(transform .7s $cubic-bezier 1s)
           transform: translateX(-100%)
           background-color: #fff
 
@@ -97,9 +97,9 @@ $card-background-color: #fff
             opacity: 1
 
           .button
+            border-color: rgba(#fff, 1)
             transform: rotateY(0)
             color: rgba(#fff, 1)
-            border-color: rgba(#fff, 1)
             &:hover, &:active, &:focus
               background-color: rgba(#fff, .3)
             &:before

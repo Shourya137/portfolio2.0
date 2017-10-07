@@ -2,7 +2,7 @@
   "name": "portfolio2",
   "version": "0.1.0",
   "private": true,
-  "homepage": ".",
+  "homepage": "https://linuk.github.io/portfolio2.0",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.8.0",
@@ -16,6 +16,7 @@
   "dependencies": {
     "bulma": "^0.5.3",
     "classnames": "^2.2.5",
+    "devicon": "^2.0.0",
     "font-awesome": "^4.7.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.1",
@@ -24,7 +25,8 @@
     "react-dom": "^16.0.0",
     "react-fontawesome": "^1.6.1",
     "react-plx": "^0.1.20",
-    "react-scroll": "^1.5.4"
+    "react-scroll": "^1.5.4",
+    "react-slick": "^0.15.4"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
@@ -33,6 +35,8 @@
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   }
 }

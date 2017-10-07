@@ -1,26 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Navbar from '../components/navbar/Navbar';
+import Navbar from 'components/navbar/Navbar';
 import logo from './logo.svg';
 
-const Layout = ({ children }) => {
-  const Brand = {
-    url: logo,
-    alt: 'Jheng-Hao Lin',
-    href: '/',
-  };
-
-  const navItemsEnd = [
-    { href: '#about', label: 'about' },
-    { href: '#skills', label: 'skills' },
-    { href: '#projects', label: 'projects' },
-  ];
-
-
+const Layout = ({ children, data: {brand, navItemsStart, navItemsEnd} }) => {
   return (
     <div className="layout">
-      <Navbar brand={Brand} navbarEnd={navItemsEnd} />
+      <Navbar
+        brand={brand}
+        navbarEnd={navItemsEnd}
+        navItemsStart={navItemsStart}
+      />
       {children}
     </div>
   );
