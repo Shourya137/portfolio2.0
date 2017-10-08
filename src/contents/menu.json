@@ -9,7 +9,6 @@
   "navItemsEnd":
   [
     { "href": "#about", "label": "about" },
-    { "href": "#resume", "label": "resume" },
     { "href": "#projects", "label": "projects" }
   ]
 

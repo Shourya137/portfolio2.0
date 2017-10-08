@@ -6,13 +6,8 @@
  **/
 @keyframes floatUp {
   0% {
-    box-shadow: 0 0 0 rgba(10, 10, 10, 0), 0 0 0 rgba(10, 10, 10, 0), 0 0 0 rgba(10, 10, 10, 0);
     transform: scale(0.86); }
-  67% {
-    box-shadow: 0 0 0 rgba(10, 10, 10, 0), 0 5px 10px rgba(10, 10, 10, 0.1), 0 1px 1px rgba(10, 10, 10, 0.2);
-    transform: scale(1); }
   100% {
-    box-shadow: 0 20px 60px rgba(10, 10, 10, 0.05), 0 5px 10px rgba(10, 10, 10, 0.1), 0 1px 1px rgba(10, 10, 10, 0.2);
     transform: scale(1); } }
 
 @keyframes change-font-color {
@@ -70,6 +65,12 @@
     transform: translateY(15px); }
   0% {
     transform: translateY(0); } }
+
+@keyframes shrink-to-right {
+  0% {
+    transform: scaleX(1); }
+  100% {
+    transform: scaleX(0); } }
 
 .hero-head.JHL_hero-head .nav {
   background-color: transparent; }
@@ -295,31 +296,60 @@ body {
 #about .shortProfile:after {
   transition-delay: .8s; }
 
-#about .icons a:nth-child(1) .icon {
-  transition-delay: 0.85s; }
-
-#about .icons a:nth-child(2) .icon {
-  transition-delay: 0.9s; }
-
-#about .icons a:nth-child(3) .icon {
-  transition-delay: 0.95s; }
-
-#about .icons a:nth-child(4) .icon {
-  transition-delay: 1s; }
-
-#about .icons .icon {
-  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86), transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+#about .icons a.button:nth-child(1) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.85s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.85s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   transform: translateX(500px);
   opacity: 0; }
-  #about .icons .icon span.fa-circle {
-    transition: color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s; }
-  #about .icons .icon:hover span.fa-circle {
-    color: #999; }
+
+#about .icons a.button:nth-child(2) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.9s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.9s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(3) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.95s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.95s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(4) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(5) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.05s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.05s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(6) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.1s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.1s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(7) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.15s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.15s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(8) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.2s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.2s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(9) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.25s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.25s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
+
+#about .icons a.button:nth-child(10) {
+  transition: opacity 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.3s, transform 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.3s, background-color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  transform: translateX(500px);
+  opacity: 0; }
 
 #about .Plx--in-about.box, #about .Plx--bellow.box {
   transform: scaleX(1); }
 
-#about .Plx--in-about .icon, #about .Plx--bellow .icon {
+#about .Plx--in-about .icons a.button, #about .Plx--bellow .icons a.button {
   transform: translateX(0);
   opacity: 1; }
 
@@ -347,10 +377,10 @@ body {
 
 .home {
   transition: color 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86);
-  height: 400px;
-  width: 400px;
-  max-height: 400px;
-  max-width: 400px;
+  height: 300px;
+  width: 300px;
+  max-height: 300px;
+  max-width: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -359,7 +389,8 @@ body {
   margin-right: auto;
   border-radius: 50%;
   z-index: 2;
-  animation: floatUp 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.7s forwards; }
+  animation: scale-up 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0s forwards;
+  border: #999 solid 3px; }
   .home:after, .home:before {
     content: '';
     position: absolute;
@@ -368,18 +399,34 @@ body {
     border-radius: 50%;
     top: 0;
     left: 0; }
-  .home:after {
-    background-color: #000;
-    animation: scale-down-big 1s cubic-bezier(0.785, 0.135, 0.15, 0.86) forwards; }
-  .home .title {
-    transform: scale(0);
-    animation: scale-up 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.2s forwards; }
+  .home .logo-container {
+    opacity: 0;
+    animation: fade-in-up 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.7s forwards;
+    padding: 50px; }
+    .home .logo-container .logo {
+      position: relative; }
+      .home .logo-container .logo:before {
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        transition: transform 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 0s;
+        transform-origin: 100% 100%;
+        background-color: #fff;
+        animation: shrink-to-right 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.5s forwards; }
   @media screen and (max-width: 768px) {
     .home {
       height: 224px;
       width: 224px; }
       .home h1.title {
         font-size: 1.5rem; } }
+
+.home-title {
+  opacity: 0;
+  animation: fade-in-up 0.5s cubic-bezier(0.785, 0.135, 0.15, 0.86) 1.2s forwards; }
 
 .skill-icons-container {
   display: flex;

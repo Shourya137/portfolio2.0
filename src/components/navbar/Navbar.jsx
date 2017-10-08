@@ -5,7 +5,6 @@ import cx from 'classnames';
 
 import NavItem from './NavItem';
 
-// TODO: Add box shadow once scroll off top
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
@@ -32,10 +31,6 @@ class Navbar extends React.Component {
 
   componentWillUnmount() {
     window.removeEventListener('scroll', this.handleScroll);
-  }
-
-  componentDidUpdate() {
-    console.log('CDU');
   }
 
   handleScroll(event) {
@@ -103,6 +98,10 @@ class Navbar extends React.Component {
       </button>
     );
 
+    /**
+     *  Display brand image with brand.url
+     *  Otherwise display text only.
+     * */
     const Brand = brand ? (
       <Link
         to="home"

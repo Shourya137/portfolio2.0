@@ -2,20 +2,18 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Navbar from 'components/navbar/Navbar';
-import logo from './logo.svg';
+import Navlogo from './JLLogoCircle.svg';
 
-const Layout = ({ children, data: {brand, navItemsStart, navItemsEnd} }) => {
-  return (
-    <div className="layout">
-      <Navbar
-        brand={brand}
-        navbarEnd={navItemsEnd}
-        navItemsStart={navItemsStart}
-      />
-      {children}
-    </div>
-  );
-};
+const Layout = ({ children, data: { brand, navItemsStart, navItemsEnd } }) => (
+  <div className="layout">
+    <Navbar
+      brand={{ ...brand, url: Navlogo }}
+      navbarEnd={navItemsEnd}
+      navItemsStart={navItemsStart}
+    />
+    {children}
+  </div>
+);
 
 Layout.propTypes = {
   children: PropTypes.arrayOf(PropTypes.node).isRequired,

@@ -10,7 +10,7 @@ const Section = ({ children, name, color, isBold, size, id, title, subtitle }) =
   const Title = title ? (
     <div className="section content is-small">
       <h1 className="title is-uppercase">{title}</h1>
-      {subtitle ? <h2 className="is-capitalized">{subtitle}</h2> : null}
+      {subtitle ? <h2>{subtitle}</h2> : null}
     </div>
   ) : null;
   return (

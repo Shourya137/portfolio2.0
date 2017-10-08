@@ -4,7 +4,7 @@ import Plx from 'react-plx';
 import StartArrow from 'components/StartArrow/StartArrow';
 import Section from 'layout/Section';
 import Profile from './profile.jpg';
-import ContactIcon from './ContactIcon';
+import ContactButton from './ContactButton';
 
 const About = (props) => {
   const {
@@ -17,12 +17,13 @@ const About = (props) => {
       contacts = [],
     },
   } = props.data;
-  const ContactIcons = contacts.map(contact => (
-    <ContactIcon
+  const ContactButtons = contacts.map(contact => (
+    <ContactButton
       key={contact.iconClass}
       href={contact.href}
       iconClass={contact.iconClass}
       isOpenNewPage={contact.isOpenNewPage}
+      title={contact.title}
     />
   ));
 
@@ -42,10 +43,12 @@ const About = (props) => {
         </div>
         <div className="column section content has-text-centered has-text-left-desktop has-text-left-tablet ">
           <h1 className="name">{name}</h1>
-          <p className="education">{education}</p>
+          <p className="education">
+            {education.map(edu => <span key={edu}>{edu}<br /></span>)}
+          </p>
           <p className="shortProfile">{shortProfile}</p>
           <div className="icons">
-            {ContactIcons}
+            {ContactButtons}
           </div>
         </div>
       </Plx>

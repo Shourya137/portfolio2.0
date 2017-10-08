@@ -3,8 +3,9 @@ import Plx from 'react-plx';
 
 import StartArrow from 'components/StartArrow/StartArrow';
 import Section from 'layout/Section';
+import Logo from 'layout/JLLogo.svg';
 
-const Home = () => (
+const Home = ({ data: { title, logoAlt } }) => (
   <Section name="home" size="fullHeight" id="home">
     <Plx
       className="columns is-multiline"
@@ -18,9 +19,15 @@ const Home = () => (
         },
       ]}
     >
-      <div className="home column is-half-desktop is-half-tablet ">
-        <h1 className="title home-title">Jheng-Hao Lin</h1>
-      </div>
+      { Logo ? <div className="home column is-half-desktop is-half-tablet">
+        <div className="logo-container">
+          <img className="logo" src={Logo} alt={logoAlt} />
+        </div>
+      </div> : null
+      }
+      { title ? <div className="column is-centered is-12">
+        <h1 className="home-title">{title}</h1>
+      </div> : null}
       <div className="column is-centered is-12">
         <StartArrow to="about" />
       </div>

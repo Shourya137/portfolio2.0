@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
-import Fa from 'react-fontawesome';
 
 class ProjectCard extends React.Component {
   constructor(props) {
@@ -38,11 +37,7 @@ class ProjectCard extends React.Component {
       name,
       tags,
       thumbnailURL,
-      imagesURL,
       shortDescription,
-      longDescription,
-      githubURL,
-      liveDemoURL,
     } } = this.props;
 
     const Tags = tags.map(tag => (

@@ -1,4 +1,4 @@
-$numOfContactIcons: 4
+$numOfContactIcons: 10
 $max-box-height: 350px
 $currentSection1: Plx--in-about
 $currentSection2: Plx--bellow
@@ -41,31 +41,46 @@ $currentSection2: Plx--bellow
   .shortProfile:after
     transition-delay: .8s
 
-  .icons
-    a
-      @for $i from 1 through $numOfContactIcons
-        &:nth-child(#{$i})
-          .icon
-            transition-delay: #{.8 + $i * .05}s
-    .icon
-      +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier)
-      transform: translateX(500px)
-      opacity: 0
-      span.fa-circle
-        +CBTransition(color, .5s)
-      &:hover
-        span.fa-circle
-          color: $grey-light
+  // for contactIcon
+  //.icons
+  //  a
+  //    @for $i from 1 through $numOfContactIcons
+  //      &:nth-child(#{$i})
+  //        .icon
+  //          transition-delay: #{.8 + $i * .05}s
+  //  .icon
+  //    +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier)
+  //    transform: translateX(500px)
+  //    opacity: 0
+  //    span.fa-circle
+  //      +CBTransition(color, .5s)
+  //    &:hover
+  //      span.fa-circle
+  //        color: $grey-light
 
+  // for contactButton
+  .icons
+    @for $i from 1 through $numOfContactIcons
+      a.button:nth-child(#{$i})
+        +transitions(opacity 1s $cubic-bezier #{.8 + $i * .05}s, transform 1s $cubic-bezier #{.8 + $i * .05}s, background-color .5s $cubic-bezier)
+        transform: translateX(500px)
+        opacity: 0
 
 
   .#{$currentSection1}, .#{$currentSection2}
     &.box
       transform: scaleX(1)
 
-    .icon
-      transform: translateX(0)
-      opacity: 1
+    // for contactIcon
+    //.icon
+    //  transform: translateX(0)
+    //  opacity: 1
+
+    // for contactButton
+    .icons
+      a.button
+        transform: translateX(0)
+        opacity: 1
 
     .profile-img-container:after, .name:after, .education:after, .shortProfile:after
         transform: scaleX(0)

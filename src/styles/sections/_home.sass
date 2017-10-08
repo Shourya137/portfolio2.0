@@ -1,9 +1,11 @@
+$home-logo-background-color: #fff
+
 .home
   transition: color .5s $cubic-bezier
-  height: 400px
-  width: 400px
-  max-height: 400px
-  max-width: 400px
+  height: 300px
+  width: 300px
+  max-height: 300px
+  max-width: 300px
   display: flex
   flex-direction: column
   justify-content: center
@@ -12,7 +14,8 @@
   margin-right: auto
   border-radius: 50%
   z-index: 2
-  animation: floatUp .8s $easeInOutBack .7s forwards
+  animation: scale-up .8s $easeInOutBack 0s forwards
+  border: $grey-light solid 3px
 
   &:after,
   &:before
@@ -24,13 +27,20 @@
     top: 0
     left: 0
 
-  &:after
-    background-color: #000
-    animation: scale-down-big 1s $cubic-bezier forwards
+  .logo-container
+    opacity: 0
+    animation: fade-in-up .5s $cubic-bezier .7s forwards
+    padding: 50px
 
-  .title
-    transform: scale(0)
-    animation: scale-up .5s $cubic-bezier 1.2s forwards
+    .logo
+      position: relative
+
+      &:before
+        +is-overlay()
+        +CBTransition(transform, .5s)
+        transform-origin: 100% 100%
+        background-color: $home-logo-background-color
+        animation: shrink-to-right .5s $cubic-bezier 1.5s forwards
 
   @media screen and (max-width: $break-md)
     height: 224px
@@ -38,4 +48,6 @@
     h1.title
       font-size: 1.5rem
 
-
+.home-title
+  opacity: 0
+  animation: fade-in-up .5s $cubic-bezier 1.2s forwards
