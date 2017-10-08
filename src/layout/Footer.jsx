@@ -1,15 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 
-const Footer = (props) => {
+export default () => {
+  const thisYear = new Date().getFullYear();
   return (
-    <div>
-      Copy
+    <div className="footer has-text-centered">
+      © {thisYear} Jheng-Hao Lin. All Rights Reserved.
     </div>
   );
 };
-
-Footer.propTypes = {};
-Footer.defaultProps = {};
-
-export default Footer;

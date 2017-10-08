@@ -18,6 +18,7 @@
     "classnames": "^2.2.5",
     "devicon": "^2.0.0",
     "font-awesome": "^4.7.0",
+    "gh-pages": "^1.0.0",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.1.1",
     "prop-types": "^15.6.0",
