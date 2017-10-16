@@ -1,7 +1,7 @@
 import React from 'react';
 import Plx from 'react-plx';
 
-import StartArrow from 'components/StartArrow/StartArrow';
+import StartArrow from 'components/startArrow/StartArrow';
 import Section from 'layout/Section';
 import Profile from './profile.jpg';
 import ContactButton from './ContactButton';

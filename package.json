@@ -2,7 +2,7 @@
   "name": "portfolio2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://linuk.github.io/portfolio2.0",
+  "homepage": "http://linuk.github.io",
   "devDependencies": {
     "babel-eslint": "^7.2.3",
     "eslint": "^4.8.0",
