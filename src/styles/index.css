@@ -121,7 +121,7 @@ h1, h2, h3, h4, h5, h6, p, a {
 
 @media screen and (min-width: 1008px) {
   .navbar {
-    border-bottom: 2px solid;
+    border-bottom: .5px solid;
     border-color: transparent;
     transition: border-color .5s; }
     .navbar.add-shadow {
