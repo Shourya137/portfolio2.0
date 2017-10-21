@@ -14,7 +14,7 @@ export default ({ href, iconClass, isOpenNewPage, title }) => {
 
   return (
     <a
-      style={{ marginRight: '5px' }}
+      style={{ marginRight: '5px', marginBottom: '5px' }}
       className="button is-light"
       href={href}
       target={aTarget}
