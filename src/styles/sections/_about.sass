@@ -29,6 +29,11 @@ $currentSection2: Plx--bellow
     +is-overlay()
     transform-origin: 100% 100%
     background-color: #fff
+    // prevent the character fonts exceed the overlay
+    height: 110%
+    width: 110%
+    left: -5%
+    height: -5%
 
   .profile-img-container:after
     transition-delay: .5s
@@ -40,23 +45,6 @@ $currentSection2: Plx--bellow
 
   .shortProfile:after
     transition-delay: .8s
-
-  // for contactIcon
-  //.icons
-  //  a
-  //    @for $i from 1 through $numOfContactIcons
-  //      &:nth-child(#{$i})
-  //        .icon
-  //          transition-delay: #{.8 + $i * .05}s
-  //  .icon
-  //    +transitions(opacity 1s $cubic-bezier, transform 1s $cubic-bezier)
-  //    transform: translateX(500px)
-  //    opacity: 0
-  //    span.fa-circle
-  //      +CBTransition(color, .5s)
-  //    &:hover
-  //      span.fa-circle
-  //        color: $grey-light
 
   // for contactButton
   .icons
@@ -70,11 +58,6 @@ $currentSection2: Plx--bellow
   .#{$currentSection1}, .#{$currentSection2}
     &.box
       transform: scaleX(1)
-
-    // for contactIcon
-    //.icon
-    //  transform: translateX(0)
-    //  opacity: 1
 
     // for contactButton
     .icons
@@ -90,21 +73,24 @@ $currentSection2: Plx--bellow
       .profile-img-container:after
           transform: scaleY(0)
 
+  .profile-img-container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+
   .profile
     height: auto
-
+    height: $profile-img-height
+    width: $profile-img-width
+    
     // Desktop
     @media screen and (min-width: $break-md)
-      border-top-left-radius: $border-radius
-      border-bottom-left-radius: $border-radius
-      height: 100%
-      //width: auto
+      border-radius: 50%
       object-fit: cover
 
     // Tablet and Mobile
     @media screen and (max-width: $break-md)
-      max-height: $profile-img-max-height
-      width: $profile-img-max-width
       border-radius: 50%
       margin-top: 20px
 
