@@ -45,12 +45,16 @@ $card-background-color: #fff
         color: rgba(#fff, 0)
         // Prevent clicked when the card is not flipped to back
         transform: rotateY(90deg)
+        left: 0
+        display: flex
+        flex-direction: column
         &.is-fixBottom
           position: absolute
           bottom: 0
           width: 100%
           border: none
           border-top: 2px solid transparent
+          
 
         &:before
           +transitions(transform .7s $cubic-bezier 1s)

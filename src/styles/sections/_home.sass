@@ -14,7 +14,7 @@ $home-logo-background-color: #fff
   margin-right: auto
   border-radius: 50%
   z-index: 2
-  animation: scale-up .8s $easeInOutBack 0s forwards
+  animation: scale-up 1s $easeInOutBack 0s forwards
   border: $grey-light solid 3px
 
   &:after,
@@ -28,19 +28,11 @@ $home-logo-background-color: #fff
     left: 0
 
   .logo-container
+    +flex-center()
     opacity: 0
-    animation: fade-in-up .5s $cubic-bezier .7s forwards
-    padding: 50px
+    animation: fade-in-up .7s $cubic-bezier 1s forwards
+    padding: 30px
 
-    .logo
-      position: relative
-
-      &:before
-        +is-overlay()
-        +CBTransition(transform, .5s)
-        transform-origin: 100% 100%
-        background-color: $home-logo-background-color
-        animation: shrink-to-right .5s $cubic-bezier 1.5s forwards
 
   @media screen and (max-width: $break-md)
     height: 224px
@@ -51,3 +43,4 @@ $home-logo-background-color: #fff
 .home-title
   opacity: 0
   animation: fade-in-up .5s $cubic-bezier 1.2s forwards
+
