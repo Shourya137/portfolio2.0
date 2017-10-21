@@ -84,7 +84,6 @@ ProjectCard.propTypes = {
     thumbnailURL: PropTypes.string.isRequired,
     images: PropTypes.arrayOf(PropTypes.string).isRequired,
     shortDescription: PropTypes.string.isRequired,
-    longDescription: PropTypes.string.isRequired,
     githubURL: PropTypes.string,
     liveDemo: PropTypes.string,
   }).isRequired,

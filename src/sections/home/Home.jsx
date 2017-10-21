@@ -3,7 +3,7 @@ import Plx from 'react-plx';
 
 import StartArrow from 'components/startArrow/StartArrow';
 import Section from 'layout/Section';
-import Logo from 'layout/JLLogo.svg';
+import Logo from 'assets/logos/logo.svg';
 
 const Home = ({ data: { title, logoAlt } }) => (
   <Section name="home" size="fullHeight" id="home">
