@@ -5,9 +5,19 @@ import Scroll from 'react-scroll';
 import Hero from 'components/hero/Hero';
 import HeroBody from 'components/hero/HeroBody';
 
-const Section = ({ children, name, color, isBold, size, id, title, subtitle }) => {
+const Section = ({
+  children,
+  name,
+  color,
+  isBold,
+  size,
+  id,
+  title,
+  subtitle,
+  displayTitle,
+}) => {
   const Element = Scroll.Element;
-  const Title = title ? (
+  const Title = displayTitle ? (
     <div className="section content is-small">
       <h1 className="title is-uppercase">{title}</h1>
       {subtitle ? <h2>{subtitle}</h2> : null}
@@ -26,16 +36,12 @@ const Section = ({ children, name, color, isBold, size, id, title, subtitle }) =
 };
 
 Section.propTypes = {
+  displayTitle: PropTypes.bool,
   title: PropTypes.string,
   subtitle: PropTypes.string,
   name: PropTypes.string.isRequired,
   isBold: PropTypes.bool,
-  size: PropTypes.oneOf([
-    'small',
-    'medium',
-    'large',
-    'fullHeight',
-  ]),
+  size: PropTypes.oneOf(['small', 'medium', 'large', 'fullHeight']),
   color: PropTypes.oneOf([
     'primary',
     'info',
@@ -51,6 +57,7 @@ Section.propTypes = {
   id: PropTypes.string,
 };
 Section.defaultProps = {
+  displayTitle: false,
   title: '',
   subtitle: '',
   isBold: false,

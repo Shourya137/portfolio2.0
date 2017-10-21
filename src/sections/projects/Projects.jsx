@@ -72,6 +72,7 @@ class Projects extends React.Component {
         id={title}
         title={title}
         subtitle={subtitle}
+        displayTitle
       >
         <Plx
           className="columns is-multiline"
