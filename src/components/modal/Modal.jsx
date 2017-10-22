@@ -35,7 +35,7 @@ const Modal = ({ isActive, title, content, buttons = [], closeModal, images = []
           <img src={images[0]} alt="" />
           <div className="content section">
             <h1 className="title">{title}</h1>
-            <p className="text">{content}</p>
+            <p className="text has-text-justified">{content}</p>
             <p className="field">
               {Buttons}
             </p>

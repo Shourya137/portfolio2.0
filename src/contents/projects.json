@@ -19,6 +19,22 @@
       "longDescription": "After one year I re-build my portfolio again with React, I removed the unnecessary parts of the contents and added more graphic motion in CSS to make it more vividly and lively. The new one was built with more functional components to boost the efficiency. Compared to the portfolio1.0 I built last year, this codes quality was improved a lot."
     },
     {
+      "name": "Yes We Stock Internship",
+      "tags": [
+        "CSS",
+        "JavaScript",
+        "Design",
+        "React JS"
+      ],
+      "thumbnailURL": "imgs/projects/thumbnails/yeswestock_tn.jpg",
+      "liveDemo": "https://medium.com/@linuk/my-first-front-end-development-internship-in-london-c2e7ffa34e7f",
+      "images": [
+        "imgs/projects/medium/yeswestock.jpg"
+      ],
+      "shortDescription": "An front-end internship in a startup.",
+      "longDescription": "Devote to a startup as my first step into the web development industry was an interesting experience, during the three months I worked in a co-working space call Camden Collective near London Euston station where were more than 50 start-ups worked there and waited for the coming pitch opportunities to become the next unicorn. Please click the demo to read more what I did during the internsihp :)"
+    },
+    {
       "name": "Portfolio1.0",
       "tags": [
         "CSS",
