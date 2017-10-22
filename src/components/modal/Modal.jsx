@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import cx from 'classnames';
 
-
 // TODO: Make Carousel
 const Modal = ({ isActive, title, content, buttons = [], closeModal, images = [] }) => {
   this.PropTypes = {
@@ -29,8 +28,9 @@ const Modal = ({ isActive, title, content, buttons = [], closeModal, images = []
 
   return (
     <div className={cx('modal', { 'is-active': isActive })}>
-      <div className="modal-background" onClick={closeModal} />
+      <div tabIndex={0} role="button" className="modal-background" onClick={closeModal} />
       <div className="modal-card">
+        <i tabIndex={0} className="fa fa-times is-large modal-close" onClick={closeModal} role="button" />
         <section className="modal-card-body is-paddingless">
           <img src={images[0]} alt="" />
           <div className="content section">
@@ -45,8 +45,5 @@ const Modal = ({ isActive, title, content, buttons = [], closeModal, images = []
     </div>
   );
 };
-
-Modal.propTypes = {};
-Modal.defaultProps = {};
 
 export default Modal;

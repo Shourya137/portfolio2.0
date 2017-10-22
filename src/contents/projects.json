@@ -53,7 +53,8 @@
       ],
       "shortDescription": "A web interface of an attendance system.",
       "longDescription": "A web interface of an attendance system, it fetches the employee's daily logs of entering and leaving times from database, calculates the average working hours within a month or a year, and shows the statics in the table or the line chart. It also provides search features to search specific data of the employee or the year.",
-      "liveDemo": "http://igor.gold.ac.uk/~jlin015/projects/attendance_UI/"
+      "liveDemo": "http://igor.gold.ac.uk/~jlin015/projects/attendance_UI/",
+      "githubURL": "https://github.com/linuk/Attendance-UI"
     },
     {
       "name": "Elegance",
@@ -156,6 +157,7 @@
         "imgs/projects/medium/marioGame.jpg"
       ],
       "shortDescription": "A classic action game made in P5 JS",
+      "longDescription": "Based on p5 JS and p5 play js, the game is controlled by arrow-keys. The game scrolls automatically and includes classic mario music and sound effects, player can experience a different mario game to the original one.",
       "githubURL": "https://github.com/linuk/Mario.Run",
       "liveDemo": "https://linuk.github.io/Mario.Run/index.html"
     }

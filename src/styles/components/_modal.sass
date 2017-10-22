@@ -1,11 +1,19 @@
 $modal-background-color: #fff
 $modal-button-hover-color: $grey-light
+
 .modal
   // Hide modal first then translate it
-  +transitions(transform 0s .5s, opacity 0.5s )
+  +transitions(transform 0.5s)
   display: flex
-  transform: translateX(100vw)
-  opacity: 0
+  transform: translateY(100vh)
+  overflow: hidden
+
+  .modal-close
+    z-index: 100
+    position: absolute
+    right: 0
+    top: 0
+    margin: 15px
 
   img
     +CBTransition(transform, .5s, .5s)
@@ -17,7 +25,6 @@ $modal-button-hover-color: $grey-light
   .title:before, .text:before
     +CBTransition(transform, .8s)
     +is-overlay()
-
     transform-origin: 100% 100%
     background-color: $modal-background-color
 
@@ -64,9 +71,8 @@ $modal-button-hover-color: $grey-light
 
   &.is-active
     // translate modal back and show it
-    +transitions(transform 0s ease-in-out, opacity .5s)
-    transform: translateX(0)
-    opacity: 1
+    +transitions(transform 0.5s ease-in-out)
+    transform: translateY(0)
 
     img
       transform: translateY(0)
