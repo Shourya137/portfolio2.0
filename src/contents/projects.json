@@ -11,7 +11,7 @@
       ],
       "thumbnailURL": "imgs/projects/thumbnails/portfolio2.0_tn.jpg",
       "githubURL": "http://github.com/linuk/portfolio2.0",
-      "liveDemo": "https://linuk.github.io/portfolio2.0",
+      "liveDemo": "www.linuk.co.uk",
       "images": [
         "imgs/projects/medium/portfolio2.0.jpg"
       ],
@@ -31,7 +31,7 @@
       "images": [
         "imgs/projects/medium/yeswestock.jpg"
       ],
-      "shortDescription": "An front-end internship in a startup.",
+      "shortDescription": "My spring front-end internship in a startup in London.",
       "longDescription": "Devote to a startup as my first step into the web development industry was an interesting experience, during the three months I worked in a co-working space call Camden Collective near London Euston station where were more than 50 start-ups worked there and waited for the coming pitch opportunities to become the next unicorn. Please click the demo to read more what I did during the internsihp :)"
     },
     {
