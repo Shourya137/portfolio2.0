@@ -3,6 +3,22 @@
   "subtitle": "Independent projects and university projects",
   "projects": [
     {
+      "name": "Fashion Kanvas ",
+      "tags": [
+        "TypeScript",
+        "Firebase",
+        "React JS",
+        "SASS"
+      ],
+      "thumbnailURL": "imgs/projects/thumbnails/fashion-kanvas_tn.jpg",
+      "liveDemo": "http://www.fashionKanvas.com",
+      "images": [
+        "imgs/projects/medium/fashion-kanvas.jpg"
+      ],
+      "shortDescription": "A smart and powerful networking app for the fashion industry.",
+      "longDescription": "This is my second part-time developer role with a start-up company Fashion Kanvas. I am helping them build a web application to support the needs of the professional social platform in the fashion industry. I worked with a senior designer to build the front-end user interface components in React JS and TypeScript, and the back-end mainly relies on Google Firebase's real-time database, cloud storage and account authentication. The beta version will release in June 2018!"
+    },
+    {
       "name": "Portfolio2.0",
       "tags": [
         "JavaScript",
