@@ -24,6 +24,8 @@ class Projects extends React.Component {
 
   showModal(project) {
     const { name, longDescription, githubURL, liveDemo, images } = project;
+    const subPage = name.replace(' ', '');
+    window.history.pushState({}, name, subPage);
     const buttons = [];
     if (githubURL) { buttons.push({ iconClass: 'github', href: githubURL, label: 'github' }); }
     if (liveDemo) { buttons.push({ iconClass: 'play-circle', href: liveDemo, label: 'demo' }); }
@@ -40,6 +42,7 @@ class Projects extends React.Component {
   }
 
   closeModal() {
+    window.history.go(-1);
     this.setState({ modal: { ...this.state.modal, isActive: false } });
   }
 
