@@ -3,6 +3,21 @@
   "subtitle": "Independent projects and university projects",
   "projects": [
     {
+      "name": "Food, Serve, Delicious ",
+      "tags": [
+        "Python",
+        "Flask"
+      ],
+      "thumbnailURL": "imgs/projects/thumbnails/food-serve-delicious_tn.jpg",
+      "liveDemo": "https://www.doc.gold.ac.uk/usr/101/",
+      "githubURL": "https://github.com/linuk/food-serve-delicious",
+      "images": [
+        "imgs/projects/medium/food-serve-delicious.jpg"
+      ],
+      "shortDescription": "A simple web app for inviting people to have meal together and make new friends.",
+      "longDescription": "This web application is named after a famous funny game \"Food, Cook, Delicious\", but it's nothing to do with it. This web app is mainly for practicing Flask and Python, user can use it to host food event to public and meet new friends. After singing up a new account, the user can either host a new event or choose to attend events hosted by other users. A restful API server is hosted as well as the web app runs, other developers can use it to develop their own application =)."
+    },
+    {
       "name": "Fashion Kanvas ",
       "tags": [
         "TypeScript",
